@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "node scripts/deploy.js",
+    "deploy-production": "node scripts/deploy.js -- --env=production --allowLive=true",
+    "watch": "theme deploy --env=development && theme watch --env=development"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/oalbacha/shopify-theme-demo/issues"
   },
-  "homepage": "https://github.com/oalbacha/shopify-theme-demo#readme"
+  "homepage": "https://github.com/oalbacha/shopify-theme-demo#readme",
+  "devDependencies": {
+    "@shopify/themekit": "^1.1.6",
+    "yargs": "^16.1.1"
+  }
 }
